@@ -25,7 +25,7 @@ class OwnerMapServiceTest {
         petService = new PetMapService();
         ownerMapService = new OwnerMapService(petTypeService, petService);
 
-        System.out.println("OwnerMapServiceTest- BeforeEach");
+        System.out.println("* BeforeEach");
     }
 
     @DisplayName("Verify Zero Owners")
@@ -48,7 +48,7 @@ class OwnerMapServiceTest {
             petTypeService.save(petType);
             petTypeService.save(petType2);
 
-            System.out.println("Nested BeforeEach");
+            System.out.println("** Nested BeforeEach");
         }
 
         @DisplayName("Test Pet Count")
@@ -67,7 +67,7 @@ class OwnerMapServiceTest {
             void setUp() {
                 ownerMapService.save(new Owner(1L, "Before", "Each"));
 
-                System.out.println("Nested Nested BeforeEach");
+                System.out.println("*** Nested Nested BeforeEach");
             }
 
             @DisplayName("Save Owner")
